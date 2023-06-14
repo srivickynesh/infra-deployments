@@ -8,7 +8,7 @@ resources:
   - ../../base/all-clusters
   - ../../base/quality-dashboard
 patchesStrategicMerge:
-  - delete-applications.yaml
+  #- delete-applications.yaml
 namespace: openshift-gitops
 patches:
   - path: development-overlay-patch.yaml
