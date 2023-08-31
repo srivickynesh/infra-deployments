@@ -10,9 +10,23 @@ resources:
   - ../../base/quality-dashboard
 
 patchesStrategicMerge:
-  - delete-applications.yaml
 namespace: openshift-gitops
 patches:
+  - path: production-overlay-patch.yaml
+    target:
+      kind: ApplicationSet
+      version: v1alpha1
+      name: external-secrets-operator
+  - path: development-overlay-patch.yaml
+    target:
+      kind: ApplicationSet
+      version: v1alpha1
+      name: monitoring-workload-logging
+  - path: production-overlay-patch.yaml
+    target:
+      kind: ApplicationSet
+      version: v1alpha1
+      name: cluster-secret-store
   - path: development-overlay-patch.yaml
     target:
       kind: ApplicationSet
