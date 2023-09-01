@@ -9,7 +9,7 @@ resources:
   - ../../base/all-clusters
   - ../../base/quality-dashboard
 
-patchesStrategicMerge:
+patches:
   - delete-applications.yaml
 namespace: openshift-gitops
 patches:
@@ -88,6 +88,11 @@ patches:
       kind: ApplicationSet
       version: v1alpha1
       name: toolchain-host-operator
+  - path: development-overlay-patch.yaml
+    target:
+      kind: ApplicationSet
+      version: v1alpha1
+      name: monitoring-workload-logging
   - path: development-overlay-patch.yaml
     target:
       kind: ApplicationSet
